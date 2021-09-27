@@ -163,7 +163,6 @@ function copyOutputText(){
 if(elTextareaForm){
   elTextareaForm.addEventListener("submit", function boom(evt) {
   evt.preventDefault();
-  console.log("hello");
   });
 }
 
@@ -171,8 +170,7 @@ if(elInputTextarea){
   elInputTextarea.addEventListener("keyup", function (evt) {
     evt.preventDefault();
     rotate = Number(elInputRotate.value);
-    console.log(elInputTextarea.value);
-    let text = doInputShifr(elInputTextarea.value);
+    let text = revertInputShifr(elInputTextarea.value);
     elOutputTextarea.value = text;
   })
 }

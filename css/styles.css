@@ -11,12 +11,18 @@
   resize: none;
   height: 300px;
   transition: box-shadow 0.3s ease;
+  font-size: 14px;
+  color: #222;
+  font-family:  "Arial";
 
 }
 .output-textarea{
   resize: none;
   height: 300px;
   transition: box-shadow 0.3s ease;
+  font-size: 14px;
+  color: #222;
+  font-family: "Arial";
 }
 
 .input-textarea:focus{
