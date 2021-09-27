@@ -34,3 +34,24 @@
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
 }
 
+@media only screen and (max-width: 578px){
+  .input-textarea {
+    resize: none;
+    height: 200px;
+    transition: box-shadow 0.3s ease;
+    font-size: 14px;
+    color: #222;
+    font-family: "Arial";
+
+  }
+
+  .output-textarea {
+    resize: none;
+    height: 200px;
+    transition: box-shadow 0.3s ease;
+    font-size: 14px;
+    color: #222;
+    font-family: "Arial";
+  }
+
+}

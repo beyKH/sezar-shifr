@@ -127,7 +127,7 @@ function revertBigShifr(letter) {
 
     if(letter.charCodeAt(letter) < 65 ){
       let difference = 65 -  letter.charCodeAt(letter);
-      letter = 90 - difference;
+      letter = 91 - difference;
       letter = String.fromCharCode(letter);
     }
   }
@@ -141,7 +141,7 @@ function revertSmallShifr(letter) {
 
     if(letter.charCodeAt(letter) < 97 ){
       let difference = 97 -  letter.charCodeAt(letter);
-      letter = 122 - difference;
+      letter = 123 - difference;
       letter = String.fromCharCode(letter);
     }
   }
