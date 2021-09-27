@@ -1,3 +1,30 @@
-.container-made{
-  max-width: 800px;
+.js-shifr-type{
+  border-radius: 20px;
+  border: none;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
 }
+.js-shifr-type:focus {
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+.input-textarea{
+  resize: none;
+  height: 300px;
+  transition: box-shadow 0.3s ease;
+
+}
+.output-textarea{
+  resize: none;
+  height: 300px;
+  transition: box-shadow 0.3s ease;
+}
+
+.input-textarea:focus{
+  outline: none;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+.output-textarea:focus {
+  outline: none;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+

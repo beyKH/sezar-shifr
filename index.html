@@ -4,12 +4,56 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS starter || Bootstap 5</title>
+  <title>Sezar Shifring</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
+  <div class="container">
+  <header class="mb-5">
+    <nav class="navbar navbar-light shadow-sm bg-light p-3 mt-5">
+      <a class="navbar-brand d-flex align-items-center">
+        <img class="me-1" src="img/logo.svg" alt="">
+        Sezar Shifr
+      </a>
+    </nav>
+  </header>
+
+  <form class="js-shifr-form" method="POST" action="https://echo.htmlacademy.ru">
+    <div class="row">
+
+      <div class="col-md-2 mb-sm-4">
+        <select class="js-shifr-type py-3 px-5 bg-light rounded shadow-sm border-0" name="filter-rotate">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+        </select>
+        <!-- <button class="btn" type="submit"> submit</button> -->
+      </div>
+
+      <div class="col-md-5 mb-sm-4">
+        <textarea class="js-input-textarea input-textarea w-100 border-none py-3 px-5 bg-light rounded shadow-sm border-0"></textarea>
+      </div>
+      <div class="col-md-5">
+        <textarea class="js-output-textarea output-textarea w-100 border-none py-2 px-5 bg-light rounded shadow-sm border-0" readonly></textarea>
+      </div>
+    </div>
+
+  </form>
+</div>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>

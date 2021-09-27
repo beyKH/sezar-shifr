@@ -1,6 +1,9 @@
 // DOM ELEMENTS
-
-
+const elTextareaForm = document.querySelector(".js-shifr-form");
+const elInputRotate = elTextareaForm.querySelector(".js-shifr-type");
+const elInputTextarea = elTextareaForm.querySelector(".js-input-textarea");
+const elOutputTextarea = elTextareaForm.querySelector(".js-output-textarea");
+let rotate = Number(elInputRotate.value);
 // FUNCTIONS
 // CONVERT INPIT TO SHIFR
 function doInputShifr(words) {
@@ -19,11 +22,11 @@ function doInputShifr(words) {
       let ascii = word.charCodeAt(i);
 
       if ( ascii >= 65 && 90 >= ascii ) {
-        newLetter = doBigShifr(word[i], Number(inputRotate));
+        newLetter = doBigShifr(word[i], rotate);
       }
 
       if ( ascii >= 97 && 122 >= ascii ) {
-        newLetter = doSmallShifr(word[i], Number(inputRotate));
+        newLetter = doSmallShifr(word[i], rotate);
       }
       newWord += newLetter;
     }
@@ -57,11 +60,11 @@ function revertInputShifr(words) {
       let ascii = word.charCodeAt(i);
 
       if ( ascii >= 65 && 90 >= ascii ) {
-        newLetter = revertBigShifr(word[i], Number(inputRotate));
+        newLetter = revertBigShifr(word[i]);
       }
 
       if ( ascii >= 97 && 122 >= ascii ) {
-        newLetter = revertSmallShifr(word[i], Number(inputRotate));
+        newLetter = revertSmallShifr(word[i]);
       }
       newWord += newLetter;
     }
@@ -79,7 +82,7 @@ function revertInputShifr(words) {
 }
 
 // MINI FUNCTION ONLYLETTER SHIFR FOR BIG LETTERS
-function doBigShifr(letter, rotate) {
+function doBigShifr(letter) {
   if(letter.charCodeAt(letter) >=  65  &&  90 >= letter.charCodeAt(letter) ){
     letter = String.fromCharCode(letter.charCodeAt(letter) + rotate);
 
@@ -96,7 +99,7 @@ function doBigShifr(letter, rotate) {
 }
 
 // MINI FUNCTION ONLYLETTER SHIFR FOR SMALL LETTERS
-function doSmallShifr(letter, rotate) {
+function doSmallShifr(letter) {
 
   if(letter.charCodeAt(letter) >=  97  &&  122 >= letter.charCodeAt(letter) ){
     letter = String.fromCharCode(letter.charCodeAt(letter) + rotate);
@@ -113,7 +116,7 @@ function doSmallShifr(letter, rotate) {
 }
 
 // MINI FUNCTION ONLY LETTER UNSHIFR BIG LETTERS
-function revertBigShifr(letter, rotate) {
+function revertBigShifr(letter) {
     if(letter.charCodeAt(letter) >=  65  &&  90 >= letter.charCodeAt(letter) ){
     letter = String.fromCharCode(letter.charCodeAt(letter) - rotate);
 
@@ -127,7 +130,7 @@ function revertBigShifr(letter, rotate) {
 }
 
 // MINI FUNCTION ONLY LETTER UNSHIFR SMALL LETTERS
-function revertSmallShifr(letter, rotate) {
+function revertSmallShifr(letter) {
     if(letter.charCodeAt(letter) >=  97  &&  122 >= letter.charCodeAt(letter) ){
     letter = String.fromCharCode(letter.charCodeAt(letter) - rotate);
 
@@ -138,4 +141,23 @@ function revertSmallShifr(letter, rotate) {
     }
   }
   return letter;
+}
+
+// EVENT LISTENERS
+
+if(elTextareaForm){
+  elTextareaForm.addEventListener("submit", function boom(evt) {
+  evt.preventDefault();
+  console.log("hello");
+  });
+}
+
+if(elInputTextarea){
+  elInputTextarea.addEventListener("keyup", function (evt) {
+    evt.preventDefault();
+    rotate = Number(elInputRotate.value);
+    let text = doInputShifr(elInputTextarea.value);
+    console.log(text);
+    elOutputTextarea.textContent = text;
+  })
 }
