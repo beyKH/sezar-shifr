@@ -158,6 +158,14 @@ function copyOutputText(){
   document.execCommand('copy')
 }
 
+function doDeshifr(evt) {
+  evt.preventDefault();
+  rotate = Number(elInputRotate.value);
+  let text = revertInputShifr(elInputTextarea.value);
+  elOutputTextarea.value = text;
+}
+
+
 // EVENT LISTENERS
 
 if(elTextareaForm){
@@ -167,12 +175,7 @@ if(elTextareaForm){
 }
 
 if(elInputTextarea){
-  elInputTextarea.addEventListener("keyup", function (evt) {
-    evt.preventDefault();
-    rotate = Number(elInputRotate.value);
-    let text = revertInputShifr(elInputTextarea.value);
-    elOutputTextarea.value = text;
-  })
+  elInputTextarea.addEventListener("keyup", doDeshifr);
 }
 
 if(elBtnClear){
@@ -181,4 +184,8 @@ if(elBtnClear){
 
 if(elBtnCopy){
   elBtnCopy.addEventListener("click", copyOutputText);
+}
+
+if(elInputRotate){
+  elInputRotate.addEventListener("change", doDeshifr);
 }
