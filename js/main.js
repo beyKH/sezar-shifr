@@ -32,6 +32,8 @@ function doInputShifr(words) {
 
       if ( ascii >= 97 && 122 >= ascii ) {
         newLetter = doSmallShifr(word[i], rotate);
+      }else{
+        newLetter = word[i]
       }
       newWord += newLetter;
     }

@@ -70,6 +70,8 @@ function revertInputShifr(words) {
 
       if ( ascii >= 97 && 122 >= ascii ) {
         newLetter = revertSmallShifr(word[i]);
+      }else{
+        newLetter = word[i]
       }
       newWord += newLetter;
     }
